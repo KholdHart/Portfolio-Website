@@ -260,12 +260,17 @@
       font-weight: 700;
       margin-bottom: 0.5rem;
       text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 2px;
+      border-bottom: none !important;
       transition: color 0.18s;
       word-break: break-all;
     }
     .contact-email:hover,
     .contact-email:focus {
       color: var(--accent);
+      text-decoration: underline;
+      border-bottom: none !important;
     }
     .contact-socials {
       display: flex;
@@ -379,7 +384,6 @@
       gap: 1.5em;
       position: relative;
     }
-    
     .footer-content__luv {
       font-size: 1.08rem;
       color: #ff6fa1;
@@ -451,6 +455,12 @@
       color: #fff;
       border-left: 5px solid var(--accent);
       position: relative;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .education-card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 4px 24px 0 rgba(0,112,243,0.13);
+      z-index: 3;
     }
     .edu-degree {
       font-size: 1.18rem;
@@ -548,6 +558,12 @@
         <a href="https://github.com/KholdHart" class="nav-icon" aria-label="GitHub" target="_blank" rel="noopener">
           <svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true">
             <path fill="currentColor" fill-rule="evenodd" d="M11 2.2c-4.85 0-8.8 3.95-8.8 8.8 0 3.89 2.52 7.19 6.02 8.36.44.08.6-.19.6-.43v-1.51c-2.45.53-2.96-1.18-2.96-1.18-.4-1.01-.98-1.28-.98-1.28-.8-.55.06-.54.06-.54.88.06 1.34.9 1.34.9.79 1.34 2.07.95 2.58.73.08-.57.31-.95.56-1.17-1.96-.22-4.03-.98-4.03-4.36 0-.96.34-1.75.89-2.37-.09-.22-.39-1.12.08-2.33 0 0 .74-.24 2.42.9.7-.19 1.45-.29 2.2-.29.75 0 1.5.1 2.2.29 1.68-1.14 2.42-.9 2.42-.9.47 1.21.17 2.11.08 2.33.55.62.89 1.41.89 2.37 0 3.39-2.07 4.13-4.04 4.35.32.28.6.83.6 1.67v2.48c0 .24.16.52.6.43C17.28 18.19 19.8 14.89 19.8 11c0-4.85-3.95-8.8-8.8-8.8Z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/magane-letsoalo-452444327/" class="nav-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true">
+            <rect width="22" height="22" rx="5" fill="currentColor" fill-opacity="0.1"/>
+            <path fill="currentColor" d="M6.6 8.2h2.2v7.6H6.6V8.2Zm1.1-3.1a1.27 1.27 0 1 1 0 2.54 1.27 1.27 0 0 1 0-2.54ZM11 8.2h2.1v1.02c.29-.55 1.02-1.13 2.1-1.13 2.25 0 2.67 1.48 2.67 3.4v4.31h-2.2v-3.82c0-.91-.02-2.08-1.27-2.08-1.28 0-1.48 1-1.48 2.02v3.88H11V8.2Z"/>
           </svg>
         </a>
       </div>
@@ -784,7 +800,7 @@
     });
   </script>
   <script>
-    // Divine Idle Universe Animation
+    // Divine Idle Universe Animation (Black & White Spectrum Only)
     const canvas = document.getElementById('universe-bg');
     const ctx = canvas.getContext('2d');
     let width = window.innerWidth, height = window.innerHeight, dpr = window.devicePixelRatio || 1;
@@ -836,10 +852,10 @@
       phase = Math.floor(elapsed/10)+1;
       if (phase !== lastPhase) { setupPhase(phase, t); lastPhase = phase; }
 
-      // Divine background
+      // Black & White Divine background
       let grad = ctx.createLinearGradient(0,0,0,height);
-      grad.addColorStop(0, phase>=6 ? "#1a0033" : phase>=4 ? "#0a0a18" : "#101010");
-      grad.addColorStop(1, phase>=6 ? "#00001a" : phase>=4 ? "#000013" : "#000011");
+      grad.addColorStop(0, phase>=6 ? "#222" : phase>=4 ? "#181818" : "#101010");
+      grad.addColorStop(1, phase>=6 ? "#000" : phase>=4 ? "#0a0a0a" : "#000");
       ctx.clearRect(0,0,width,height);
       ctx.fillStyle = grad;
       ctx.fillRect(0,0,width,height);
@@ -862,18 +878,18 @@
       }
       if (phase === 2) {
         for (let i=0; i<30; i++) stars.push(new Star({twinkle: true, fadeIn: 800+Math.random()*1800}));
-        nebulae.push(new Nebula({x: width*0.3, y: height*0.4, r: width*0.22, color: "rgba(170,80,255,0.13)"}));
+        nebulae.push(new Nebula({x: width*0.3, y: height*0.4, r: width*0.22, color: "rgba(255,255,255,0.13)"}));
       }
       if (phase === 3) {
         blooms.push(new Bloom({x: width*1.08, y: height*0.5, r: Math.max(width,height)*0.45}));
         for (let i=0; i<4; i++) stars.push(new Star({big: true, pulse: true, fadeIn: 1000+Math.random()*1200}));
-        nebulae.push(new Nebula({x: width*0.7, y: height*0.7, r: width*0.18, color: "rgba(0,255,255,0.11)"}));
+        nebulae.push(new Nebula({x: width*0.7, y: height*0.7, r: width*0.18, color: "rgba(255,255,255,0.11)"}));
         let center = {x: width*1.08, y: height*0.5};
         stars.slice(0, Math.floor(stars.length*0.3)).forEach(s => s.setOrbit(center, Math.random()*width*0.45+width*0.1));
       }
       if (phase === 4) {
         scheduleShootingStar();
-        nebulae.push(new Nebula({x: width*0.5, y: height*0.6, r: width*0.13, color: "rgba(255,180,80,0.09)"}));
+        nebulae.push(new Nebula({x: width*0.5, y: height*0.6, r: width*0.13, color: "rgba(255,255,255,0.09)"}));
         for (let i=0; i<40; i++) dust.push(new Dust());
       }
       if (phase === 5) {
@@ -883,7 +899,7 @@
       if (phase === 6) {
         sacred = new Sacred();
         auroras.push(new Aurora(true));
-        nebulae.push(new Nebula({x: width*0.2, y: height*0.8, r: width*0.18, color: "rgba(80,255,180,0.09)"}));
+        nebulae.push(new Nebula({x: width*0.2, y: height*0.8, r: width*0.18, color: "rgba(255,255,255,0.09)"}));
       }
     }
 
@@ -988,7 +1004,7 @@
 
     function ShootingStar() {
       let edge = Math.random()<0.5 ? 'left' : 'top';
-      let colorChoices = ['#7ecbff','#ffe066','#ff7e7e','#b6a0ff','#fff'];
+      let colorChoices = ['#fff','#eee','#ccc','#b6b6b6','#fff'];
       this.color = colorChoices[Math.floor(Math.random()*colorChoices.length)];
       if (edge==='left') {
         this.x = -80; this.y = Math.random()*height*0.8+height*0.1;
@@ -1047,10 +1063,11 @@
       this.divine = divine;
     }
     Aurora.prototype.draw = function(ctx, t, elapsed) {
+      // Black & white aurora
       let grad = ctx.createLinearGradient(0, height*0.1, width, height*0.9);
-      grad.addColorStop(0, this.divine ? 'rgba(80,255,255,0.18)' : 'rgba(80,255,255,0.08)');
-      grad.addColorStop(0.5+0.2*Math.sin(t*0.0005), this.divine ? 'rgba(170,80,255,0.23)' : 'rgba(170,80,255,0.13)');
-      grad.addColorStop(1, this.divine ? 'rgba(255,255,80,0.18)' : 'rgba(255,255,80,0.08)');
+      grad.addColorStop(0, this.divine ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.08)');
+      grad.addColorStop(0.5+0.2*Math.sin(t*0.0005), this.divine ? 'rgba(200,200,200,0.23)' : 'rgba(200,200,200,0.13)');
+      grad.addColorStop(1, this.divine ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.08)');
       ctx.save();
       ctx.globalAlpha = this.divine ? 0.33+0.13*Math.sin(t*0.0007) : 0.22+0.13*Math.sin(t*0.0007);
       ctx.fillStyle = grad;
@@ -1103,6 +1120,28 @@
       ctx.setLineDash([]);
       ctx.restore();
     };
+  </script>
+  <!-- 4. ABOUT IMAGE HOVER SWAP SCRIPT -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const aboutImg = document.getElementById('about-img');
+    if (aboutImg) {
+      const orig = aboutImg.getAttribute('src');
+      const alt = aboutImg.getAttribute('data-alt-src');
+      aboutImg.addEventListener('mouseenter', () => {
+        aboutImg.src = alt;
+      });
+      aboutImg.addEventListener('mouseleave', () => {
+        aboutImg.src = orig;
+      });
+      aboutImg.addEventListener('focus', () => {
+        aboutImg.src = alt;
+      });
+      aboutImg.addEventListener('blur', () => {
+        aboutImg.src = orig;
+      });
+    }
+  });
   </script>
 </body>
 </html>
