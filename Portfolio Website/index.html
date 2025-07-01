@@ -665,9 +665,9 @@
       /* Stack Section */
       .stack-list {
         display: grid !important;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 0.7rem;
-        max-width: 320px;
+        max-width: 370px;
         margin: 0 auto 1.5rem auto;
         justify-items: center;
         align-items: center;
@@ -692,12 +692,14 @@
         width: 28px;
         height: 28px;
       }
-      /* Center Node.js and Foundry on mobile */
+      /* Node.js and Foundry on their own row, centered under columns 2 and 3 */
       .stack-list li[title="Node.js"] {
         grid-column: 2 / span 1 !important;
+        grid-row: 4 !important;
       }
       .stack-list li[title="Foundry"] {
-        grid-column: 2 / span 1 !important;
+        grid-column: 3 / span 1 !important;
+        grid-row: 4 !important;
       }
       /* Education Section */
       .education-card {
