@@ -12,32 +12,37 @@
   <style>
     :root {
       --bg: #101010;
-      --surface: #fff;
-      --border: #e5e5e5;
-      --text: #181818;
-      --text-muted: #555;
-      --accent: #222;
-      --accent-hover: #000;
+      --surface: #18191a;
+      --border: #23272f;
+      --text: #fff;
+      --text-muted: #b0b0b0;
+      --accent: #0070f3;
+      --accent-hover: #0059c9;
       --radius: 14px;
       --transition: 0.2s cubic-bezier(.4,0,.2,1);
       --spacing: 2.5rem;
-      --max-width: 900px;
+      --max-width: 1100px;
+      --section-spacing: 4rem;
+      --box-gap: 2rem;
     }
-    html {
-      scroll-behavior: smooth;
-      background: var(--bg);
-      color-scheme: dark;
-    }
-    body {
+    html, body {
       margin: 0;
-      font-family: 'Inter', Arial, sans-serif;
+      padding: 0;
       background: var(--bg);
       color: var(--text);
-      min-height: 100vh;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 1.08rem;
       line-height: 1.7;
       letter-spacing: 0.01em;
-      font-size: 1.08rem;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+      color-scheme: dark;
       overflow-x: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    html::-webkit-scrollbar, body::-webkit-scrollbar {
+      display: none;
     }
     a {
       color: var(--accent);
@@ -57,41 +62,42 @@
     }
     main {
       display: block;
+      position: relative;
+      z-index: 2;
     }
-    /* --- Section Styles --- */
     section {
-      padding: 5rem 0 3rem 0;
-      background: var(--bg);
+      padding: var(--section-spacing) 0;
+      background: transparent;
       border: none;
       box-shadow: none;
     }
     section + section {
-      margin-top: 2.5rem;
+      margin-top: 0;
     }
     .section-title {
       font-size: 2.5rem;
       font-weight: 800;
       color: #fff;
-      margin: 0;
+      margin: 0 0 2rem 0;
       letter-spacing: -0.01em;
+      text-align: left;
     }
     /* About Section */
     .about-content {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center;
-      gap: 3.5rem;
+      gap: 3rem;
       width: 100%;
       min-height: 320px;
-      margin-top: 2rem;
+      margin-top: 0;
     }
     .about-img {
-      width: 260px;
-      height: 260px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #23272f;
+      border: 3px solid var(--border);
       background: #fff;
       box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
       transition: border-color 0.18s, box-shadow 0.3s, transform 0.3s;
@@ -108,7 +114,7 @@
     }
     .about-default {
       display: block;
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       color: #fff;
       text-align: left;
       min-height: 2.5em;
@@ -119,27 +125,22 @@
       display: none;
       min-height: 2.5em;
       position: relative;
-      font-size: 1.18rem;
+      font-size: 1.08rem;
       font-weight: 500;
       color: #fff;
       margin-top: 0.2em;
-      min-width: 260px;
+      min-width: 220px;
       text-align: left;
     }
-    .about-bio.slideshow-active .about-default {
-      display: none;
-    }
-    .about-bio.slideshow-active .about-slideshow {
-      display: block;
-    }
+    .about-bio.slideshow-active .about-default { display: none; }
+    .about-bio.slideshow-active .about-slideshow { display: block; }
     .about-slide {
       opacity: 0;
       position: absolute;
-      left: 0; right: 0;
-      top: 0;
+      left: 0; right: 0; top: 0;
       transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
       z-index: 1;
-      font-size: 1.18rem;
+      font-size: 1.08rem;
       line-height: 1.7;
       letter-spacing: 0.01em;
       background: none;
@@ -150,53 +151,35 @@
       z-index: 2;
       animation: slideIn 0.7s cubic-bezier(.4,0,.2,1);
     }
-   @keyframes slideIn {
+    @keyframes slideIn {
       from { opacity: 0; transform: translateY(18px);}
       to { opacity: 1; transform: translateY(0);}
     }
-    @media (max-width: 900px) {
-      .about-content {
-        flex-direction: column;
-        gap: 1.5rem;
-        margin-top: 2rem;
-      }
-      .about-img {
-        width: 120px;
-        height: 120px;
-      }
-      .about-bio {
-        max-width: 100%;
-        align-items: center;
-        text-align: center;
-      }
-      .about-default, .about-slideshow {
-        text-align: center;
-      }
-    }
-    /* --- Projects --- */
+    /* Projects */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.2rem;
-      margin-top: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--box-gap);
+      margin-top: 0;
+      margin-bottom: 0;
     }
     .project-card {
-      background: #18191a;
-      border-radius: 8px;
-      border: none;
+      background: var(--surface);
+      border-radius: 10px;
       box-shadow: 0 2px 16px 0 rgba(0,0,0,0.09);
       padding: 2rem 1.5rem 1.5rem 1.5rem;
       display: flex;
       flex-direction: column;
       gap: 1.1rem;
       transition: transform 0.18s, box-shadow 0.18s;
+      min-height: 210px;
     }
     .project-card:hover, .project-card:focus-within {
       transform: translateY(-4px) scale(1.015);
       box-shadow: 0 8px 32px 0 rgba(0,112,243,0.10);
     }
     .project-title {
-      font-size: 1.22rem;
+      font-size: 1.18rem;
       font-weight: 700;
       color: #fff;
       margin-bottom: 0.3rem;
@@ -204,18 +187,19 @@
     }
     .project-stack {
       font-size: 0.98rem;
-      color: #b0b0b0;
+      color: var(--text-muted);
       margin-bottom: 0.5rem;
       font-weight: 500;
       letter-spacing: 0.01em;
     }
     .project-desc {
-      color: #b0b0b0;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
     }
     .project-link {
       margin-top: auto;
       align-self: flex-start;
-      color: #0070f3;
+      color: var(--accent);
       font-size: 1.01rem;
       font-weight: 600;
       display: flex;
@@ -227,9 +211,39 @@
       transition: border-color 0.18s;
     }
     .project-link:hover, .project-link:focus {
-      border-bottom: 2px solid #0070f3;
+      border-bottom: 2px solid var(--accent);
     }
-    /* --- Contact --- */
+    /* See All Projects Button */
+    .see-all-projects-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+    .see-all-btn-prominent {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: #fff !important;
+      font-size: 1.18rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 2em;
+      padding: 0.9em 2.5em;
+      margin: 0;
+      box-shadow: 0 2px 16px 0 rgba(0,112,243,0.13);
+      cursor: pointer;
+      text-decoration: none !important;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+    }
+    .see-all-btn-prominent:hover,
+    .see-all-btn-prominent:focus {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 24px 0 rgba(0,112,243,0.18);
+      transform: translateY(-2px) scale(1.03);
+      color: #fff;
+    }
+    /* Contact */
     .contact-content {
       display: flex;
       flex-direction: column;
@@ -237,7 +251,7 @@
       align-items: flex-start;
     }
     .contact-text {
-      color: #b0b0b0;
+      color: var(--text-muted);
       font-size: 1.08rem;
     }
     .contact-email {
@@ -247,9 +261,11 @@
       margin-bottom: 0.5rem;
       text-decoration: underline;
       transition: color 0.18s;
+      word-break: break-all;
     }
-    .contact-email:hover, .contact-email:focus {
-      color: #0070f3;
+    .contact-email:hover,
+    .contact-email:focus {
+      color: var(--accent);
     }
     .contact-socials {
       display: flex;
@@ -260,7 +276,7 @@
       width: 38px;
       height: 38px;
       color: #fff;
-      background: #23272f;
+      background: var(--border);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -268,30 +284,32 @@
       font-size: 1.3rem;
       transition: background 0.18s, color 0.18s, box-shadow 0.18s;
       box-shadow: 0 1px 8px 0 rgba(0,0,0,0.04);
+      text-decoration: none;
     }
-    .social-icon:hover, .social-icon:focus {
-      background: #0070f3;
+    .social-icon:hover,
+    .social-icon:focus {
+      background: var(--accent);
       color: #fff;
       box-shadow: 0 2px 16px 0 rgba(0,112,243,0.10);
     }
-    /* --- Header --- */
+    /* Header */
     .site-header {
       position: sticky;
       top: 0;
-      width: 100%;
-      background: #101010;
+      width: 100vw;
+      background: var(--bg);
       box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
       border-bottom: none;
       z-index: 100;
     }
     .nav-container {
-      max-width: 1100px;
+      max-width: var(--max-width);
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
       height: 56px;
-      padding: 0 2rem;
+      padding: 0 var(--spacing);
     }
     .nav-left {
       display: flex;
@@ -339,75 +357,55 @@
       background: #181818;
       color: #fff;
     }
-    /* --- Footer --- */
+    /* Footer */
     .site-footer {
       border-top: none;
-      background: #101010;
+      background: var(--bg);
       color: #888;
-      font-size: 0.98rem;
-      padding: 2.5rem 0 1.5rem 0;
-      margin-top: 3rem;
+      font-size: 0.95rem;
+      padding: 1.2rem 0 0.7rem 0;
+      margin-top: 2rem;
       text-align: left;
       box-shadow: 0 -2px 16px 0 rgba(0,0,0,0.08);
+      width: 100vw;
     }
     .footer-content {
-      max-width: 900px;
+      max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 2rem;
-    }
-    /* Make the "See All Projects" button prominent and centered */
-    .see-all-projects-wrapper {
       display: flex;
-      justify-content: center;
-      margin-top: 2.5rem;
-    }
-    .see-all-btn-prominent {
-      display: inline-flex;
       align-items: center;
-      background: linear-gradient(90deg, #0070f3 0%, #0051a3 100%);
-      color: #fff;
-      font-size: 1.18rem;
+      justify-content: center;
+      gap: 1.5em;
+      position: relative;
+    }
+    
+    .footer-content__luv {
+      font-size: 1.08rem;
+      color: #ff6fa1;
       font-weight: 700;
-      padding: 1em 2.2em;
-      border-radius: 2em;
-      box-shadow: 0 4px 24px 0 rgba(0,112,243,0.18);
-      text-decoration: none;
-      border: none;
-      transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
-      letter-spacing: 0.01em;
-      margin-top: 0;
+      opacity: 0;
+      margin-left: 1.5em;
+      letter-spacing: 0.03em;
+      pointer-events: none;
+      transition: opacity 0.4s;
+      white-space: nowrap;
+      position: relative;
     }
-    .see-all-btn-prominent:hover, .see-all-btn-prominent:focus {
-      background: linear-gradient(90deg, #0051a3 0%, #0070f3 100%);
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 8px 32px 0 rgba(0,112,243,0.22);
-      color: #fff;
-    }
-    @media (max-width: 900px) {
-      .container { padding: 0 1rem; }
-      .footer-content { padding: 0 1rem; }
-    }
-    @media (max-width: 700px) {
-      .about-content { flex-direction: column; gap: 1.5rem; }
-      .section-title-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-      .section-title { font-size: 2rem; }
-    }
-    @media (max-width: 420px) {
-      .about-img { width: 90px; height: 90px; }
-      .section-title { font-size: 1.4rem; }
+    .site-footer:hover .footer-content__luv {
+      opacity: 1;
     }
     /* Stack Section */
     #stack {
-      padding-top: 3rem;
-      padding-bottom: 2rem;
+      padding-top: var(--section-spacing);
+      padding-bottom: var(--section-spacing);
     }
     .stack-list {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: 1fr;
-      gap: 2.2rem 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+      gap: var(--box-gap);
       list-style: none;
-      padding: 2rem 0 0 0;
+      padding: 0;
       margin: 0 auto;
       justify-items: center;
       align-items: center;
@@ -417,26 +415,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #23272f;
+      background: var(--border);
       border-radius: 1.2em;
-      padding: 0;
       box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
-      margin-bottom: 0;
+      min-width: 90px;
+      min-height: 90px;
+      width: 90px;
+      height: 90px;
+      border-left: 5px solid var(--accent);
       transition: transform 0.18s, box-shadow 0.18s;
-      min-width: 100px;
-      min-height: 100px;
-      width: 100px;
-      height: 100px;
-      border-left: 5px solid #0070f3;
-      border: none;
     }
     .stack-list li:hover {
       transform: scale(1.08);
       box-shadow: 0 4px 24px 0 rgba(0,112,243,0.13);
     }
     .stack-icon {
-      width: 56px;
-      height: 56px;
+      width: 48px;
+      height: 48px;
       display: block;
       object-fit: contain;
       filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
@@ -445,32 +440,20 @@
     .stack-list li:hover .stack-icon {
       transform: scale(1.12) rotate(-4deg);
     }
-    @media (max-width: 900px) {
-      .stack-list {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.2rem 1.2rem;
-      }
-      .stack-list li {
-        min-width: 80px;
-        min-height: 80px;
-        width: 80px;
-        height: 80px;
-      }
-    }
     /* Education Card */
     .education-card {
       background: linear-gradient(90deg, #18191a 60%, #23272f 100%);
       border-radius: 1.2em;
       box-shadow: 0 2px 16px 0 rgba(0,112,243,0.08);
-      padding: 2.2em 2em 1.5em 2em;
-      margin: 2.5em 0 0 0;
+      padding: 2em 2em 1.5em 2em;
+      margin: 2em 0 0 0;
       max-width: 480px;
       color: #fff;
-      border-left: 5px solid #0070f3;
+      border-left: 5px solid var(--accent);
       position: relative;
     }
     .edu-degree {
-      font-size: 1.25rem;
+      font-size: 1.18rem;
       font-weight: 700;
       margin-bottom: 0.4em;
       letter-spacing: 0.01em;
@@ -478,28 +461,24 @@
     .edu-school {
       font-size: 1.08rem;
       font-weight: 500;
-      color: #b0b0b0;
+      color: var(--text-muted);
       margin-bottom: 0.7em;
     }
     .edu-dates {
       font-size: 1.01rem;
-      color: #0070f3;
+      color: var(--accent);
       display: flex;
       align-items: center;
       font-weight: 600;
       margin-top: 0.5em;
     }
-    @media (max-width: 700px) {
-      .education-card { padding: 1.2em 1em 1em 1em; }
-    }
-
-    /* Universe Background Overlay */
+    /* Universe Background Overlay - covers everything */
     #universe-bg {
       pointer-events: none;
-      position: absolute;
+      position: fixed;
       z-index: 0;
-      left: 0; top: 0; width: 100vw; min-height: 100vh;
-      height: 100%;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      min-height: 100vh;
       opacity: 0;
       transition: opacity 2s cubic-bezier(.4,0,.2,1);
       background: transparent;
@@ -508,12 +487,6 @@
     #universe-bg.active {
       opacity: 1;
     }
-    /* Remove stacking context that interferes with canvas */
-    /* body > *:not(#universe-bg) {
-      position: relative;
-      z-index: 1;
-    } */
-    /* Instead, only set z-index on header/footer if needed */
     .site-header, .site-footer {
       position: relative;
       z-index: 2;
@@ -521,6 +494,41 @@
     main, section, .container {
       position: relative;
       z-index: 2;
+    }
+    body.divine-idle main,
+    body.divine-idle .site-header,
+    body.divine-idle .site-footer {
+      opacity: 0.13;
+      filter: blur(2.5px) brightness(0.7);
+      pointer-events: none;
+      user-select: none;
+      transition: opacity 1.5s cubic-bezier(.4,0,.2,1), filter 1.5s cubic-bezier(.4,0,.2,1);
+    }
+    body.divine-idle #universe-bg {
+      opacity: 1 !important;
+      transition: opacity 2s cubic-bezier(.4,0,.2,1);
+    }
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .container { padding: 0 1rem; }
+      .footer-content { padding: 0 1rem; }
+    }
+    @media (max-width: 900px) {
+      .about-content { flex-direction: column; gap: 1.5rem; }
+      .about-img { width: 120px; height: 120px; }
+      .about-bio { max-width: 100%; align-items: center; text-align: center; }
+      .about-default, .about-slideshow { text-align: center; }
+      .stack-list { grid-template-columns: repeat(3, 1fr); gap: 1.2rem 1.2rem; }
+      .stack-list li { min-width: 70px; min-height: 70px; width: 70px; height: 70px; }
+      .stack-icon { width: 36px; height: 36px; }
+      .section-title { font-size: 2rem; }
+      .education-card { padding: 1.2em 1em 1em 1em; }
+    }
+    @media (max-width: 700px) {
+      .see-all-btn-prominent { width: 100%; padding-left: 0; padding-right: 0; }
+      .section-title { font-size: 1.4rem; }
+      .projects-grid { gap: 1rem; }
+      .stack-list { gap: 1rem; }
     }
   </style>
 </head>
@@ -545,9 +553,8 @@
       </div>
     </nav>
   </header>
-
   <main>
-    <!-- About Section (Slideshow style) -->
+    <!-- About Section -->
     <section id="about">
       <div class="container">
         <h1 class="section-title">About</h1>
@@ -563,36 +570,16 @@
               Hey, I'm Magane, a CS student at BC ITversity. passionate about web3, AI, coding and creativity.
             </span>
             <div class="about-slideshow" id="about-slideshow">
-              <div class="about-slide active">
-                Web3 Developer.
-              </div>
-              <div class="about-slide">
-                Hands-on Ethereum smart contracts (Solidity).
-              </div>
-              <div class="about-slide">
-                Focus on secure, efficient DeFi systems.
-              </div>
-              <div class="about-slide">
-                Built and audited contracts via Cyfrin Updraft, CodeHawks.
-              </div>
-              <div class="about-slide">
-                Passionate about decentralized tech.
-              </div>
-              <div class="about-slide">
-                Expanding skills: Hardhat, Foundry, security best practices.
-              </div>
-              <div class="about-slide">
-                Strong software engineering foundation.
-              </div>
-              <div class="about-slide">
-                Computer Science student @ Belgium Campus.
-              </div>
-              <div class="about-slide">
-                Full stack experience: JavaScript, C#, HTML, CSS.
-              </div>
-              <div class="about-slide">
-                Confident with Git, GitHub for version control, collaboration, Agile workflows
-              </div>
+              <div class="about-slide active">Web3 Developer.</div>
+              <div class="about-slide">Hands-on Ethereum smart contracts (Solidity).</div>
+              <div class="about-slide">Focus on secure, efficient DeFi systems.</div>
+              <div class="about-slide">Built and audited contracts via Cyfrin Updraft, CodeHawks.</div>
+              <div class="about-slide">Passionate about decentralized tech.</div>
+              <div class="about-slide">Expanding skills: Hardhat, Foundry, security best practices.</div>
+              <div class="about-slide">Strong software engineering foundation.</div>
+              <div class="about-slide">Computer Science student @ Belgium Campus.</div>
+              <div class="about-slide">Full stack experience: JavaScript, C#, HTML, CSS.</div>
+              <div class="about-slide">Confident with Git, GitHub for version control, collaboration, Agile workflows</div>
             </div>
           </div>
         </div>
@@ -603,7 +590,6 @@
       <div class="container">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid" id="projects-grid">
-          <!-- Project Cards -->
           <div class="project-card">
             <div class="project-title">Fund-Me</div>
             <div class="project-stack">Solidity, Ethereum</div>
@@ -663,12 +649,11 @@
         </div>
       </div>
     </section>
-    <!-- Stack Section (already present) -->
+    <!-- Stack Section -->
     <section id="stack">
       <div class="container">
         <h2 class="section-title">Stack</h2>
         <ul class="stack-list">
-          <!-- Row 1: Languages -->
           <li title="Solidity">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity" class="stack-icon" />
           </li>
@@ -687,7 +672,6 @@
           <li title="SQL">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="stack-icon" />
           </li>
-          <!-- Row 2: Tools -->
           <li title="Git">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="stack-icon" />
           </li>
@@ -706,7 +690,6 @@
           <li title="VS Code">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="stack-icon" />
           </li>
-          <!-- Row 3: Center Node.js and Foundry in the middle columns -->
           <li style="grid-column: 3 / span 1;" title="Node.js">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="stack-icon" />
           </li>
@@ -732,6 +715,38 @@
             January 2023 – Present
           </div>
         </div>
+        <div class="education-card" style="margin-top:2rem;">
+          <div class="edu-degree">Fullstack Solidity</div>
+          <div class="edu-school">Cyfrin Updraft</div>
+          <div class="edu-dates">
+            <svg width="18" height="18" fill="none" viewBox="0 0 18 18" style="vertical-align:middle;margin-right:6px;">
+              <circle cx="9" cy="9" r="8" stroke="#0070f3" stroke-width="2"/>
+              <rect x="8.25" y="4" width="1.5" height="5.5" rx="0.75" fill="#0070f3"/>
+              <rect x="8.25" y="10.5" width="1.5" height="3.5" rx="0.75" fill="#0070f3"/>
+            </svg>
+            January 2025 – Present
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-content">
+          <div class="contact-text">
+            <p>Feel free to reach out via email to connect or request my CV.</p>
+          </div>
+          <a class="contact-email" href="mailto:phillipletsoalo1234@gmail.com">phillipletsoalo1234@gmail.com</a>
+          <div class="contact-socials">
+            <a class="social-icon" href="https://github.com/KholdHart" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
+                <path fill="currentColor" fill-rule="evenodd" d="M11 2.2c-4.85 0-8.8 3.95-8.8 8.8 0 3.89 2.52 7.19 6.02 8.36.44.08.6-.19.6-.43v-1.51c-2.45.53-2.96-1.18-2.96-1.18-.4-1.01-.98-1.28-.98-1.28-.8-.55.06-.54.06-.54.88.06 1.34.9 1.34.9.79 1.34 2.07.95 2.58.73.08-.57.31-.95.56-1.17-1.96-.22-4.03-.98-4.03-4.36 0-.96.34-1.75.89-2.37-.09-.22-.39-1.12.08-2.33 0 0 .74-.24 2.42.9.7-.19 1.45-.29 2.2-.29.75 0 1.5.1 2.2.29 1.68-1.14 2.42-.9 2.42-.9.47 1.21.17 2.11.08 2.33.55.62.89 1.41.89 2.37 0 3.39-2.07 4.13-4.04 4.35.32.28.6.83.6 1.67v2.48c0 .24.16.52.6.43C17.28 18.19 19.8 14.89 19.8 11c0-4.85-3.95-8.8-8.8-8.8Z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+            <a class="social-icon" href="https://www.linkedin.com/in/magane-letsoalo-452444327/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
+                <rect width="22" height="22" rx="5" fill="currentColor" fill-opacity="0.1"/>
                 <path fill="currentColor" d="M6.6 8.2h2.2v7.6H6.6V8.2Zm1.1-3.1a1.27 1.27 0 1 1 0 2.54 1.27 1.27 0 0 1 0-2.54ZM11 8.2h2.1v1.02c.29-.55 1.02-1.13 2.1-1.13 2.25 0 2.67 1.48 2.67 3.4v4.31h-2.2v-3.82c0-.91-.02-2.08-1.27-2.08-1.28 0-1.48 1-1.48 2.02v3.88H11V8.2Z"/>
               </svg>
             </a>
@@ -743,35 +758,351 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-content">
-        &copy; 2025 Magane Letsoalo
+        <span class="footer-content__main">&copy; 2025 Magane Letsoalo</span>
+        <span class="footer-content__luv">from kasi, with luv</span>
       </div>
     </div>
   </footer>
   <script>
-// About Section Slideshow (delayed start)
-document.addEventListener('DOMContentLoaded', function() {
-  const bio = document.getElementById('about-bio');
-  const slides = Array.from(document.querySelectorAll('#about-slideshow .about-slide'));
-  let slideIdx = 0;
-  let intervalId = null;
+    // About Section Slideshow (delayed start)
+    document.addEventListener('DOMContentLoaded', function() {
+      const bio = document.getElementById('about-bio');
+      const slides = Array.from(document.querySelectorAll('#about-slideshow .about-slide'));
+      let slideIdx = 0;
+      function showSlide(idx) {
+        slides.forEach((el, i) => el.classList.toggle('active', i === idx));
+      }
+      function nextSlide() {
+        slideIdx = (slideIdx + 1) % slides.length;
+        showSlide(slideIdx);
+      }
+      setTimeout(() => {
+        bio.classList.add('slideshow-active');
+        showSlide(slideIdx);
+        setInterval(nextSlide, 3200);
+      }, 5000);
+    });
+  </script>
+  <script>
+    // Divine Idle Universe Animation
+    const canvas = document.getElementById('universe-bg');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth, height = window.innerHeight, dpr = window.devicePixelRatio || 1;
+    function resizeCanvas() {
+      width = window.innerWidth; height = window.innerHeight;
+      canvas.width = width * dpr; canvas.height = height * dpr;
+      canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+      ctx.setTransform(1,0,0,1,0,0); ctx.scale(dpr, dpr);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
-  function showSlide(idx) {
-    slides.forEach((el, i) => el.classList.toggle('active', i === idx));
-  }
+    let idleTimer, idleStart, idleActive = false, animationFrame;
+    let phase = 0, lastPhase = 0;
+    let stars = [], blooms = [], nebulae = [], shootingStars = [], auroras = [], sacred = null, dust = [];
 
-  function nextSlide() {
-    slideIdx = (slideIdx + 1) % slides.length;
-    showSlide(slideIdx);
-  }
+    function resetIdle() {
+      if (idleActive) endDivineIdle();
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(startDivineIdle, 10000);
+    }
+    ['mousemove','keydown','touchstart','scroll'].forEach(ev =>
+      window.addEventListener(ev, resetIdle, {passive:true})
+    );
+    resetIdle();
 
-  // Start slideshow after 5 seconds
-  setTimeout(() => {
-    bio.classList.add('slideshow-active');
-    showSlide(slideIdx); // Ensure first slide is visible
-    intervalId = setInterval(nextSlide, 3200);
-  }, 5000);
-});
-</script>
-  
+    function startDivineIdle() {
+      idleActive = true;
+      idleStart = performance.now();
+      document.body.classList.add('divine-idle');
+      canvas.classList.add('active');
+      phase = 0; lastPhase = 0;
+      stars = []; blooms = []; nebulae = []; shootingStars = []; auroras = []; dust = [];
+      sacred = null;
+      animateDivine();
+    }
+    function endDivineIdle() {
+      idleActive = false;
+      document.body.classList.remove('divine-idle');
+      canvas.classList.remove('active');
+      cancelAnimationFrame(animationFrame);
+      ctx.clearRect(0,0,width,height);
+    }
+
+    function animateDivine() {
+      if (!idleActive) return;
+      let t = performance.now();
+      let elapsed = Math.min(60, (t - idleStart)/1000);
+      phase = Math.floor(elapsed/10)+1;
+      if (phase !== lastPhase) { setupPhase(phase, t); lastPhase = phase; }
+
+      // Divine background
+      let grad = ctx.createLinearGradient(0,0,0,height);
+      grad.addColorStop(0, phase>=6 ? "#1a0033" : phase>=4 ? "#0a0a18" : "#101010");
+      grad.addColorStop(1, phase>=6 ? "#00001a" : phase>=4 ? "#000013" : "#000011");
+      ctx.clearRect(0,0,width,height);
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,width,height);
+
+      nebulae.forEach(n => { n.update(t, elapsed); n.draw(ctx); });
+      blooms.forEach(b => b.draw(ctx, t, elapsed));
+      stars.forEach(s => { s.update(t, elapsed); s.draw(ctx); });
+      shootingStars.forEach(s => { s.update(t, elapsed); s.draw(ctx); });
+      shootingStars = shootingStars.filter(s => s.alive);
+      auroras.forEach(a => a.draw(ctx, t, elapsed));
+      dust.forEach(d => { d.update(); d.draw(ctx); });
+      if (sacred) sacred.draw(ctx, t, elapsed);
+
+      animationFrame = requestAnimationFrame(animateDivine);
+    }
+
+    function setupPhase(phase, t) {
+      if (phase === 1) {
+        for (let i=0; i<8; i++) stars.push(new Star({fadeIn: 1000+Math.random()*2000}));
+      }
+      if (phase === 2) {
+        for (let i=0; i<30; i++) stars.push(new Star({twinkle: true, fadeIn: 800+Math.random()*1800}));
+        nebulae.push(new Nebula({x: width*0.3, y: height*0.4, r: width*0.22, color: "rgba(170,80,255,0.13)"}));
+      }
+      if (phase === 3) {
+        blooms.push(new Bloom({x: width*1.08, y: height*0.5, r: Math.max(width,height)*0.45}));
+        for (let i=0; i<4; i++) stars.push(new Star({big: true, pulse: true, fadeIn: 1000+Math.random()*1200}));
+        nebulae.push(new Nebula({x: width*0.7, y: height*0.7, r: width*0.18, color: "rgba(0,255,255,0.11)"}));
+        let center = {x: width*1.08, y: height*0.5};
+        stars.slice(0, Math.floor(stars.length*0.3)).forEach(s => s.setOrbit(center, Math.random()*width*0.45+width*0.1));
+      }
+      if (phase === 4) {
+        scheduleShootingStar();
+        nebulae.push(new Nebula({x: width*0.5, y: height*0.6, r: width*0.13, color: "rgba(255,180,80,0.09)"}));
+        for (let i=0; i<40; i++) dust.push(new Dust());
+      }
+      if (phase === 5) {
+        for (let i=0; i<40; i++) dust.push(new Dust());
+        auroras.push(new Aurora());
+      }
+      if (phase === 6) {
+        sacred = new Sacred();
+        auroras.push(new Aurora(true));
+        nebulae.push(new Nebula({x: width*0.2, y: height*0.8, r: width*0.18, color: "rgba(80,255,180,0.09)"}));
+      }
+    }
+
+    function Star(opts={}) {
+      this.x = Math.random()*width;
+      this.y = Math.random()*height;
+      this.r = opts.big ? Math.random()*2.2+1.2 : Math.random()*0.7+0.5;
+      this.baseR = this.r;
+      this.alpha = 0;
+      this.maxAlpha = opts.big ? 0.85 : Math.random()*0.4+0.3;
+      this.twinkle = opts.twinkle || false;
+      this.twinklePhase = Math.random()*Math.PI*2;
+      this.twinkleSpeed = Math.random()*0.8+0.2;
+      this.pulse = opts.pulse || false;
+      this.pulsePhase = Math.random()*Math.PI*2;
+      this.pulseSpeed = Math.random()*0.5+0.2;
+      this.fadeIn = opts.fadeIn || 1000;
+      this.created = performance.now();
+      this.orbital = false;
+      this.orbitCenter = null;
+      this.orbitRadius = 0;
+      this.orbitAngle = Math.random()*Math.PI*2;
+      this.orbitSpeed = (Math.random()*0.0007+0.0003)*(Math.random()<0.5?1:-1);
+    }
+    Star.prototype.setOrbit = function(center, radius) {
+      this.orbital = true;
+      this.orbitCenter = center;
+      this.orbitRadius = radius;
+    };
+    Star.prototype.update = function(t, elapsed) {
+      let since = t - this.created;
+      this.alpha = Math.min(this.maxAlpha, this.maxAlpha * (since/this.fadeIn));
+      if (this.twinkle) {
+        this.alpha = this.maxAlpha * (0.7 + 0.3*Math.sin(this.twinklePhase + t*this.twinkleSpeed*0.001));
+      }
+      if (this.pulse) {
+        this.r = this.baseR * (0.8 + 0.25*Math.sin(this.pulsePhase + t*this.pulseSpeed*0.001));
+      }
+      if (this.orbital && this.orbitCenter) {
+        this.orbitAngle += this.orbitSpeed;
+        this.x = this.orbitCenter.x + Math.cos(this.orbitAngle)*this.orbitRadius;
+        this.y = this.orbitCenter.y + Math.sin(this.orbitAngle)*this.orbitRadius;
+      }
+    };
+    Star.prototype.draw = function(ctx) {
+      ctx.save();
+      ctx.globalAlpha = this.alpha;
+      let grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r*2.5);
+      grad.addColorStop(0, "#fff");
+      grad.addColorStop(0.6, "#fff");
+      grad.addColorStop(1, "rgba(255,255,255,0)");
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r*2.5, 0, Math.PI*2);
+      ctx.fillStyle = grad;
+      ctx.shadowColor = "#fff";
+      ctx.shadowBlur = this.r*6;
+      ctx.fill();
+      ctx.restore();
+    };
+
+    function Bloom(opts) {
+      this.x = opts.x; this.y = opts.y; this.r = opts.r;
+    }
+    Bloom.prototype.draw = function(ctx, t, elapsed) {
+      let grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
+      grad.addColorStop(0, "rgba(255,255,255,0.9)");
+      grad.addColorStop(0.15, "rgba(255,255,255,0.25)");
+      grad.addColorStop(1, "rgba(255,255,255,0)");
+      ctx.save();
+      ctx.globalAlpha = 0.7+0.2*Math.sin(t*0.0005);
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+      ctx.fillStyle = grad;
+      ctx.filter = 'blur(18px)';
+      ctx.fill();
+      ctx.filter = 'none';
+      ctx.restore();
+    };
+
+    function Nebula(opts) {
+      this.x = opts.x; this.y = opts.y; this.r = opts.r; this.color = opts.color;
+      this.phase = Math.random()*Math.PI*2;
+      this.speed = 0.00013 + Math.random()*0.00007;
+    }
+    Nebula.prototype.update = function(t) {
+      this.phase += this.speed;
+    };
+    Nebula.prototype.draw = function(ctx) {
+      ctx.save();
+      ctx.globalAlpha = 0.22 + 0.13*Math.sin(this.phase);
+      let grad = ctx.createRadialGradient(this.x, this.y, this.r*0.2, this.x, this.y, this.r);
+      grad.addColorStop(0, this.color);
+      grad.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+      ctx.fillStyle = grad;
+      ctx.filter = 'blur(12px)';
+      ctx.fill();
+      ctx.filter = 'none';
+      ctx.restore();
+    };
+
+    function ShootingStar() {
+      let edge = Math.random()<0.5 ? 'left' : 'top';
+      let colorChoices = ['#7ecbff','#ffe066','#ff7e7e','#b6a0ff','#fff'];
+      this.color = colorChoices[Math.floor(Math.random()*colorChoices.length)];
+      if (edge==='left') {
+        this.x = -80; this.y = Math.random()*height*0.8+height*0.1;
+        this.vx = Math.random()*8+7; this.vy = Math.random()*2-1;
+      } else {
+        this.x = Math.random()*width*0.8+width*0.1; this.y = -80;
+        this.vx = Math.random()*2-1; this.vy = Math.random()*8+7;
+      }
+      this.len = Math.random()*width*0.25+width*0.25;
+      this.alpha = 0;
+      this.maxAlpha = 0.7+Math.random()*0.2;
+      this.birth = performance.now();
+      this.life = 1700+Math.random()*1100;
+      this.trail = [];
+      this.alive = true;
+    }
+    ShootingStar.prototype.update = function(t) {
+      let dt = t-this.birth;
+      if (dt<200) this.alpha = this.maxAlpha*(dt/200);
+      else if (dt>this.life-250) this.alpha = this.maxAlpha*(1-(dt-(this.life-250))/250);
+      else this.alpha = this.maxAlpha;
+      this.trail.push({x:this.x, y:this.y});
+      if (this.trail.length>30) this.trail.shift();
+      this.x += this.vx; this.y += this.vy;
+      if (dt > this.life) this.alive = false;
+    };
+    ShootingStar.prototype.draw = function(ctx) {
+      ctx.save();
+      ctx.globalAlpha = this.alpha;
+      ctx.strokeStyle = this.color;
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      for (let i=0; i<this.trail.length; i++) {
+        let p = this.trail[i];
+        if (i===0) ctx.moveTo(p.x, p.y);
+        else ctx.lineTo(p.x, p.y);
+      }
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, 2.5, 0, Math.PI*2);
+      ctx.fillStyle = '#fff';
+      ctx.shadowColor = this.color;
+      ctx.shadowBlur = 16;
+      ctx.fill();
+      ctx.restore();
+    };
+
+    function scheduleShootingStar() {
+      if (!idleActive) return;
+      shootingStars.push(new ShootingStar());
+      let interval = phase>=6 ? 2500+Math.random()*2000 : 6500+Math.random()*2000;
+      setTimeout(scheduleShootingStar, interval);
+    }
+
+    function Aurora(divine) {
+      this.divine = divine;
+    }
+    Aurora.prototype.draw = function(ctx, t, elapsed) {
+      let grad = ctx.createLinearGradient(0, height*0.1, width, height*0.9);
+      grad.addColorStop(0, this.divine ? 'rgba(80,255,255,0.18)' : 'rgba(80,255,255,0.08)');
+      grad.addColorStop(0.5+0.2*Math.sin(t*0.0005), this.divine ? 'rgba(170,80,255,0.23)' : 'rgba(170,80,255,0.13)');
+      grad.addColorStop(1, this.divine ? 'rgba(255,255,80,0.18)' : 'rgba(255,255,80,0.08)');
+      ctx.save();
+      ctx.globalAlpha = this.divine ? 0.33+0.13*Math.sin(t*0.0007) : 0.22+0.13*Math.sin(t*0.0007);
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,width,height);
+      ctx.restore();
+    };
+
+    function Dust() {
+      this.x = Math.random()*width;
+      this.y = Math.random()*height;
+      this.r = Math.random()*1.2+0.2;
+      this.alpha = Math.random()*0.15+0.05;
+      this.vx = (Math.random()-0.5)*0.1;
+      this.vy = (Math.random()-0.5)*0.1;
+    }
+    Dust.prototype.update = function() {
+      this.x += this.vx; this.y += this.vy;
+      if (this.x<0) this.x+=width; if (this.x>width) this.x-=width;
+      if (this.y<0) this.y+=height; if (this.y>height) this.y-=height;
+    };
+    Dust.prototype.draw = function(ctx) {
+      ctx.save();
+      ctx.globalAlpha = this.alpha;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+      ctx.fillStyle = '#fff';
+      ctx.fill();
+      ctx.restore();
+    };
+
+    function Sacred() {}
+    Sacred.prototype.draw = function(ctx, t, elapsed) {
+      let cx = width/2, cy = height/2, R = Math.min(width, height)*0.22;
+      let petals = 6, circles = 2;
+      ctx.save();
+      ctx.globalAlpha = 0.045 + 0.03 * Math.sin(t * 0.0002);
+      ctx.strokeStyle = 'rgba(255,255,255,0.09)';
+      ctx.lineWidth = 0.7;
+      ctx.setLineDash([2, 8]);
+      ctx.translate(cx, cy);
+      ctx.rotate(t * 0.00009);
+      for (let i = 0; i < petals; i++) {
+        let angle = i * Math.PI * 2 / petals;
+        for (let j = 1; j <= circles; j++) {
+          ctx.beginPath();
+          ctx.arc(Math.cos(angle) * R * j / 2, Math.sin(angle) * R * j / 2, R, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+      }
+      ctx.setLineDash([]);
+      ctx.restore();
+    };
+  </script>
 </body>
 </html>
