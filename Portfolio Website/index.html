@@ -114,32 +114,32 @@
       transition: opacity 0.5s;
     }
     .about-slideshow {
-      display: block;
-      position: relative;
+      display: none;
       min-height: 2.5em;
-      height: 2.5em; /* or set to the max height you expect */
-      overflow: hidden;
-      width: 100%;
+      position: relative;
+      font-size: 1.08rem;
+      font-weight: 500;
+      color: #fff;
+      margin-top: 0.2em;
+      min-width: 220px;
+      text-align: left;
     }
+    .about-bio.slideshow-active .about-default { display: none; }
+    .about-bio.slideshow-active .about-slideshow { display: block; }
     .about-slide {
+      opacity: 0;
       position: absolute;
       left: 0; right: 0; top: 0;
-      width: 100%;
-      opacity: 0;
       transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
       z-index: 1;
       font-size: 1.08rem;
       line-height: 1.7;
       letter-spacing: 0.01em;
       background: none;
-      pointer-events: none;
-      /* Prevents layout shift */
-      white-space: normal;
-      word-break: break-word;
     }
     .about-slide.active {
       opacity: 1;
-      position: absolute;
+      position: relative;
       z-index: 2;
       animation: slideIn 0.7s cubic-bezier(.4,0,.2,1);
     }
@@ -939,10 +939,10 @@
           <li title="VS Code">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="stack-icon" />
           </li>
-          <li title="Node.js">
+          <li style="grid-column: 3 / span 1;" title="Node.js">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="stack-icon" />
           </li>
-          <li title="Foundry">
+          <li style="grid-column: 4 / span 1;" title="Foundry">
             <img src="https://avatars.githubusercontent.com/u/99892494?s=280&v=4" alt="Foundry" class="stack-icon" style="background:#fff;border-radius:50%;" />
           </li>
         </ul>
@@ -1014,7 +1014,7 @@
   </footer>
   <script>
     // About Section Slideshow
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', function() {
       const bio = document.getElementById('about-bio');
       const slides = Array.from(document.querySelectorAll('#about-slideshow .about-slide'));
       let slideIdx = 0;
@@ -1030,20 +1030,6 @@
         showSlide(slideIdx);
         setInterval(nextSlide, 3200);
       }, 5000);
-    });
-
-    // About image hover swap
-    document.addEventListener('DOMContentLoaded', () => {
-      const aboutImg = document.getElementById('about-img');
-      if (!aboutImg) return;
-      const orig = aboutImg.getAttribute('src');
-      const alt = aboutImg.getAttribute('data-alt-src');
-      ['mouseenter', 'focus'].forEach(evt =>
-        aboutImg.addEventListener(evt, () => { aboutImg.src = alt; })
-      );
-      ['mouseleave', 'blur'].forEach(evt =>
-        aboutImg.addEventListener(evt, () => { aboutImg.src = orig; })
-      );
     });
   </script>
   <script>
@@ -1367,6 +1353,20 @@
       ctx.setLineDash([]);
       ctx.restore();
     };
+  </script>
+  <script>
+    // About image hover swap
+    document.addEventListener('DOMContentLoaded', function() {
+      const aboutImg = document.getElementById('about-img');
+      if (aboutImg) {
+        const orig = aboutImg.getAttribute('src');
+        const alt = aboutImg.getAttribute('data-alt-src');
+        aboutImg.addEventListener('mouseenter', () => { aboutImg.src = alt; });
+        aboutImg.addEventListener('mouseleave', () => { aboutImg.src = orig; });
+        aboutImg.addEventListener('focus', () => { aboutImg.src = alt; });
+        aboutImg.addEventListener('blur', () => { aboutImg.src = orig; });
+      }
+    });
   </script>
 </body>
 </html>
