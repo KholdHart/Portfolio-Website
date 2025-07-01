@@ -685,10 +685,19 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        background: var(--border);
+        border-left: 5px solid var(--accent);
       }
       .stack-icon {
         width: 28px;
         height: 28px;
+      }
+      /* Center Node.js and Foundry on mobile */
+      .stack-list li[title="Node.js"] {
+        grid-column: 2 / span 1 !important;
+      }
+      .stack-list li[title="Foundry"] {
+        grid-column: 2 / span 1 !important;
       }
       /* Education Section */
       .education-card {
