@@ -747,6 +747,31 @@
       </div>
     </div>
   </footer>
+  <script>
+// About Section Slideshow (delayed start)
+document.addEventListener('DOMContentLoaded', function() {
+  const bio = document.getElementById('about-bio');
+  const slides = Array.from(document.querySelectorAll('#about-slideshow .about-slide'));
+  let slideIdx = 0;
+  let intervalId = null;
+
+  function showSlide(idx) {
+    slides.forEach((el, i) => el.classList.toggle('active', i === idx));
+  }
+
+  function nextSlide() {
+    slideIdx = (slideIdx + 1) % slides.length;
+    showSlide(slideIdx);
+  }
+
+  // Start slideshow after 5 seconds
+  setTimeout(() => {
+    bio.classList.add('slideshow-active');
+    showSlide(slideIdx); // Ensure first slide is visible
+    intervalId = setInterval(nextSlide, 3200);
+  }, 5000);
+});
+</script>
   
 </body>
 </html>
