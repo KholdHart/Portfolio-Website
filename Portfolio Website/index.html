@@ -688,10 +688,6 @@
         background: var(--border);
         border-left: 5px solid var(--accent);
       }
-      .stack-icon {
-        width: 28px;
-        height: 28px;
-      }
       /* Node.js and Foundry on their own row, centered under columns 2 and 3 */
       .stack-list li[title="Node.js"] {
         grid-column: 2 / span 1 !important;
@@ -772,6 +768,17 @@
         padding: 1.2rem 0 0.7rem 0;
         box-sizing: border-box;
       }
+      /* About Slideshow Mobile Adjustment */
+      @media (max-width: 900px) {
+        #about-slideshow {
+          min-height: 3.5em; /* Adjust as needed for your longest slide */
+        }
+      }
+      @media (max-width: 600px) {
+        #about-slideshow {
+          min-height: 3.8em; /* Adjust as needed for your longest slide */
+        }
+      }
     }
   </style>
 </head>
@@ -811,12 +818,11 @@
           <img class="about-img" id="about-img"
             src="imgs/ChatGPT Image Jul 1, 2025, 04_35_26 PM.png"
             alt="Portrait of Magane Letsoalo"
-            loading="lazy"
             data-alt-src="imgs/Remilio-1745143888343.png"
           />
           <div class="about-bio" id="about-bio">
             <span class="about-default" id="about-default">
-              Hey, I'm Magane, a CS student at BC ITversity. passionate about web3, AI, coding and creativity.
+              Hey, I'm Magane, a CS student at BC ITversity. Passionate about web3, AI, coding and creativity.
             </span>
             <div class="about-slideshow" id="about-slideshow">
               <div class="about-slide active">Web3 Developer.</div>
@@ -1029,7 +1035,7 @@
         bio.classList.add('slideshow-active');
         showSlide(slideIdx);
         setInterval(nextSlide, 3200);
-      }, 5000);
+      }, 8000); // was 5000
     });
   </script>
   <script>
