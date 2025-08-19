@@ -611,4 +611,4 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutImg.addEventListener('focus', () => { aboutImg.src = alt; });
     aboutImg.addEventListener('blur', () => { aboutImg.src = orig; });
   }
-});
+});  
