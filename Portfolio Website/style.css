@@ -89,7 +89,7 @@
 .flag-overlay {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -8px; /* moved slightly to the left */
   width: 60px;    /* Increased from 40px */
   height: 42px;   /* Increased from 28px */
   border-radius: 4px 0 10px 0;
