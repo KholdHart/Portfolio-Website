@@ -3,241 +3,234 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Magane Letsoalo</title>
-  <meta name="description" content="Portfolio of Magane Letsoalo – Web3 builder, smart contract engineer, and open-source advocate." />
+  <title>Magane Letsoalo | RPA & AI Automation Developer</title>
+  <meta name="description" content="Magane Letsoalo builds UiPath automations and LLM-powered agents. RPA intern at i1Solutions, UiPath Automation Associate, Bachelor of Computing student at Belgium Campus." />
+  <meta name="color-scheme" content="dark light" />
+  <meta property="og:title" content="Magane Letsoalo | RPA & AI Automation Developer" />
+  <meta property="og:description" content="UiPath automations and LLM-powered agents, built on a software engineering foundation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="imgs/portrait.webp" />
   <link rel="icon" type="image/png" href="imgs/majin.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="imgs/portrait.webp" as="image" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="universe-bg"></canvas>
-  <!-- Sticky Header -->
+  <canvas id="universe-bg" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <nav class="nav-container">
-      <div class="nav-left">
-        <span class="nav-logo">Magane Letsoalo</span>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="#contact" class="nav-link">Contact</a>
+    <nav class="nav container" aria-label="Primary">
+      <a class="nav-logo" href="#about">Magane Letsoalo</a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#projects">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
       </div>
-      <div class="nav-right">
-        <a href="https://github.com/KholdHart" class="nav-icon" aria-label="GitHub" target="_blank" rel="noopener">
-          <svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true">
-            <path fill="currentColor" fill-rule="evenodd" d="M11 2.2c-4.85 0-8.8 3.95-8.8 8.8 0 3.89 2.52 7.19 6.02 8.36.44.08.6-.19.6-.43v-1.51c-2.45.53-2.96-1.18-2.96-1.18-.4-1.01-.98-1.28-.98-1.28-.8-.55.06-.54.06-.54.88.06 1.34.9 1.34.9.79 1.34 2.07.95 2.58.73.08-.57.31-.95.56-1.17-1.96-.22-4.03-.98-4.03-4.36 0-.96.34-1.75.89-2.37-.09-.22-.39-1.12.08-2.33 0 0 .74-.24 2.42.9.7-.19 1.45-.29 2.2-.29.75 0 1.5.1 2.2.29 1.68-1.14 2.42-.9 2.42-.9.47 1.21.17 2.11.08 2.33.55.62.89 1.41.89 2.37 0 3.39-2.07 4.13-4.04 4.35.32.28.6.83.6 1.67v2.48c0 .24.16.52.6.43C17.28 18.19 19.8 14.89 19.8 11c0-4.85-3.95-8.8-8.8-8.8Z" clip-rule="evenodd"/>
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/magane-letsoalo-452444327/" class="nav-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true">
-            <rect width="22" height="22" rx="5" fill="currentColor" fill-opacity="0.1"/>
-            <path fill="currentColor" d="M6.6 8.2h2.2v7.6H6.6V8.2Zm1.1-3.1a1.27 1.27 0 1 1 0 2.54 1.27 1.27 0 0 1 0-2.54ZM11 8.2h2.1v1.02c.29-.55 1.02-1.13 2.1-1.13 2.25 0 2.67 1.48 2.67 3.4v4.31h-2.2v-3.82c0-.91-.02-2.08-1.27-2.08-1.28 0-1.48 1-1.48 2.02v3.88H11V8.2Z"/>
-          </svg>
-        </a>
+      <div class="nav-icons">
+        <a href="https://github.com/KholdHart" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></svg></a>
+        <a href="https://www.linkedin.com/in/magane-letsoalo-452444327/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg></a>
       </div>
     </nav>
   </header>
-  <main>
-    <!-- About Section -->
-    <section id="about">
-      <div class="container">
-        <h1 class="section-title">About</h1>
-        <div class="about-content">
-          <div class="about-img-wrapper">
-            <img class="about-img" id="about-img"
-              src="imgs/ChatGPT Image Jul 1, 2025, 04_35_26 PM.png"
-              alt="Portrait of Magane Letsoalo"
-              data-alt-src="imgs/Remilio-1745143888343.png"
-            />
-            <!-- flag removed per user request -->
-          </div>
-          <div class="about-bio" id="about-bio">
-            <span class="about-default" id="about-default">
-              Hey I'm Magane, Full-stack developer skilled in JavaScript, C# and building modern web apps.
-            </span>
-            <div class="about-slideshow" id="about-slideshow">
-              <div class="about-slide active">Web Developer & Full Stack Engineer.</div>
-              <div class="about-slide">Building responsive web apps with JavaScript, C#, and Java.</div>
-              <div class="about-slide">Experienced in RESTful APIs, SQL, and MongoDB.</div>
-              <div class="about-slide">Skilled in React, Node.js, and ASP.NET Core MVC.</div>
-              <div class="about-slide">Designed and deployed projects using Git, Docker, and cloud platforms.</div>
-              <div class="about-slide">Strong focus on UI/UX, accessibility, and performance.</div>
-              <div class="about-slide">Effective communicator and team player in Agile environments.</div>
-              <div class="about-slide">Proficient in testing, debugging, and maintaining codebases.</div>
-              <div class="about-slide">Always learning new frameworks and best practices.</div>
-              <div class="about-slide">Passionate about building useful, scalable web solutions.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid" id="projects-grid">
-          <div class="project-card">
-            <div class="project-title">Jetspot AI</div>
-            <div class="project-stack">React, AI, Web</div>
-            <div class="project-desc">AI-powered web app for chatting and image upload.</div>
-            <a class="project-link" href="https://github.com/KholdHart/jetspot-AI" target="_blank" rel="noopener">
-              GitHub <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div class="project-card">
-            <div class="project-title">The NEWS</div>
-            <div class="project-stack">HTML,CSS,JavaScript, API</div>
-            <div class="project-desc">Modern news website using live APIs and React.</div>
-            <a class="project-link" href="https://github.com/KholdHart/The-NEWS" target="_blank" rel="noopener">
-              GitHub <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div class="project-card">
-            <div class="project-title">BC Wellness System</div>
-            <div class="project-stack">Java</div>
-            <div class="project-desc">Java web & desktop system for student wellness at Belgium Campus.</div>
-            <a class="project-link" href="https://github.com/KholdHart/BC-Wellness-System" target="_blank" rel="noopener">
-              GitHub <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div class="project-card">
-            <div class="project-title">Ego is the Enemy</div>
-            <div class="project-stack">HTML, CSS, JavaScript</div>
-            <div class="project-desc">A website exploring the concept of ego.</div>
-            <a class="project-link" href="https://github.com/KholdHart/Ego-is-the-Enemy" target="_blank" rel="noopener">
-              GitHub <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div class="project-card">
-            <div class="project-title">Expense Tracker</div>
-            <div class="project-stack">ASP.NET, MVC, CRUD, Web</div>
-            <div class="project-desc">Simple web app for tracking expenses and budgeting.</div>
-            <a class="project-link" href="https://github.com/KholdHart/Expense-Tracker" target="_blank" rel="noopener">
-              GitHub <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div class="project-card">
-            <div class="project-title">Community Portal</div>
-            <div class="project-stack">Javascript, EJS, Node.js</div>
-            <div class="project-desc">Dynamic community website for events and feedback.</div>
-            <a class="project-link" href="https://github.com/KholdHart/WPR381-Community-Portal" target="_blank" rel="noopener">
-              GitHub <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-        <div class="see-all-projects-wrapper">
-          <a class="see-all-btn-prominent" href="https://github.com/KholdHart?tab=repositories" target="_blank" rel="noopener">
-            <span>See All Projects on GitHub</span>
-            <svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true" style="margin-left:8px;">
-              <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 11h8m0 0-3-3m3 3-3 3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-    <!-- Stack Section -->
-    <section id="stack">
-      <div class="container">
-        <h2 class="section-title">Stack</h2>
-        <ul class="stack-list">
-          
-          <li title="JavaScript">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="stack-icon" />
-          </li>
-          <li title="C#">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="stack-icon" />
-          </li>
-          <li title="HTML">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="stack-icon" />
-          </li>
-          <li title="CSS">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="stack-icon" />
-          </li>
-          <li title="SQL">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="stack-icon" />
-          </li>
-          <li title="Git">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="stack-icon" />
-          </li>
-          <li title="Node.js">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="stack-icon" />
-          </li>
-          <li title="Solidity">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity" class="stack-icon" />
-          </li>
 
-        </ul>
-      </div>
-    </section>
-    <!-- Education Section -->
-    <section id="education">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="education-card">
-          <div class="edu-degree">Bachelor in Computer Science</div>
-          <div class="edu-school">Belgium Campus ITversity</div>
-          <div class="edu-dates">
-            <svg width="18" height="18" fill="none" viewBox="0 0 18 18" style="vertical-align:middle;margin-right:6px;">
-              <circle cx="9" cy="9" r="8" stroke="#0070f3" stroke-width="2"/>
-              <rect x="8.25" y="4" width="1.5" height="5.5" rx="0.75" fill="#0070f3"/>
-              <rect x="8.25" y="10.5" width="1.5" height="3.5" rx="0.75" fill="#0070f3"/>
-            </svg>
-            January 2023 – Present
+  <main id="main">
+    <!-- Hero -->
+    <section id="about" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow load-in" style="--d:0">RPA & AI automation developer</p>
+          <h1 class="hero-title load-in" style="--d:1">I build software robots and AI agents.</h1>
+          <p class="hero-sub load-in" style="--d:2">UiPath automations and LLM-powered agents at i1Solutions, backed by a software engineering degree in progress.</p>
+          <div class="hero-ctas load-in" style="--d:3">
+            <a class="btn btn-primary" href="#experience">See my work <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></a>
+            <a class="btn btn-ghost" href="mailto:phillipletsoalo1234@gmail.com"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></svg> Email me</a>
           </div>
         </div>
-        <div class="education-card" style="margin-top:2rem;">
-          <div class="edu-degree">Fullstack Solidity</div>
-          <div class="edu-school">Cyfrin Updraft</div>
-          <div class="edu-dates">
-            <svg width="18" height="18" fill="none" viewBox="0 0 18 18" style="vertical-align:middle;margin-right:6px;">
-              <circle cx="9" cy="9" r="8" stroke="#0070f3" stroke-width="2"/>
-              <rect x="8.25" y="4" width="1.5" height="5.5" rx="0.75" fill="#0070f3"/>
-              <rect x="8.25" y="10.5" width="1.5" height="3.5" rx="0.75" fill="#0070f3"/>
-            </svg>
-            January 2025 – Present
+        <figure class="hero-photo load-in" style="--d:2">
+          <img src="imgs/portrait.webp" width="800" height="1200" alt="Portrait of Magane Letsoalo standing in a busy courtyard" fetchpriority="high" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="experience">
+      <div class="container exp-grid">
+        <aside class="exp-role reveal">
+          <h2 class="section-title">Experience</h2>
+          <div class="role-card">
+            <p class="role-company">i1Solutions</p>
+            <p class="role-title">RPA Intern</p>
+            <p class="role-meta"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></svg> Midrand, Gauteng</p>
+            <p class="role-meta mono">Current role</p>
+            <p class="role-summary">Building production automations in UiPath Studio and Maestro across two internal projects, from process design to debugging live integrations.</p>
           </div>
+        </aside>
+
+        <div class="exp-projects">
+          <article class="exp-project reveal">
+            <div class="exp-icon"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,48H136V16a8,8,0,0,0-16,0V48H56A32,32,0,0,0,24,80V192a32,32,0,0,0,32,32H200a32,32,0,0,0,32-32V80A32,32,0,0,0,200,48Zm16,144a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V80A16,16,0,0,1,56,64H200a16,16,0,0,1,16,16Zm-52-56H92a28,28,0,0,0,0,56h72a28,28,0,0,0,0-56Zm-24,16v24H116V152ZM80,164a12,12,0,0,1,12-12h8v24H92A12,12,0,0,1,80,164Zm84,12h-8V152h8a12,12,0,0,1,0,24ZM72,108a12,12,0,1,1,12,12A12,12,0,0,1,72,108Zm88,0a12,12,0,1,1,12,12A12,12,0,0,1,160,108Z"/></svg></div>
+            <h3>Service Desk Agent</h3>
+            <p class="exp-lede">An agentic BPMN process in UiPath Maestro that triages Jira Service Management tickets with an LLM, routes them, and escalates urgent ones.</p>
+            <ul class="exp-points">
+              <li>Engineered the prompts for the ticket triage agent and turned the resource matrix and knowledge base into Markdown the agent can use.</li>
+              <li>Built the urgent-ticket email notification workflow and the exception handling around it.</li>
+              <li>Posted internal notes back to tickets through the Jira Service Management API.</li>
+              <li>Replaced hardcoded transition IDs and config values with name-based lookups, so the process survives Jira workflow changes.</li>
+              <li>Traced an empty issue ID binding that made every Jira write return 404, and fixed a JQL variable collision.</li>
+            </ul>
+            <p class="exp-tags mono">UiPath Maestro · Jira Service Management API</p>
+          </article>
+
+          <article class="exp-project reveal">
+            <div class="exp-icon"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M160,112h48a16,16,0,0,0,16-16V48a16,16,0,0,0-16-16H160a16,16,0,0,0-16,16V64H128a24,24,0,0,0-24,24v32H72v-8A16,16,0,0,0,56,96H24A16,16,0,0,0,8,112v32a16,16,0,0,0,16,16H56a16,16,0,0,0,16-16v-8h32v32a24,24,0,0,0,24,24h16v16a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V160a16,16,0,0,0-16-16H160a16,16,0,0,0-16,16v16H128a8,8,0,0,1-8-8V88a8,8,0,0,1,8-8h16V96A16,16,0,0,0,160,112ZM56,144H24V112H56v32Zm104,16h48v48H160Zm0-112h48V96H160Z"/></svg></div>
+            <h3>HR Candidate Screening System</h3>
+            <p class="exp-lede">Automates recruitment from application submission through to the accept or reject decision.</p>
+            <ul class="exp-points">
+              <li>Designed the job requirements matrix that hiring managers use to define new roles.</li>
+              <li>Built a UiPath workflow with Python Scope that turns the matrix into structured Markdown for the screening step.</li>
+            </ul>
+            <p class="exp-tags mono">UiPath Studio · Python · Excel</p>
+          </article>
         </div>
       </div>
     </section>
-    <!-- Contact Section -->
-    <section id="contact">
+
+    <!-- Credentials: certification + research -->
+    <section id="credentials" class="credentials">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-content">
-          <div class="contact-text">
-            <p>Feel free to reach out via email to connect or request my CV.</p>
-            <p><strong>Location:</strong> Pretoria, Gauteng, South Africa</p>
-          </div>
-          <a class="contact-email" href="mailto:phillipletsoalo1234@gmail.com">phillipletsoalo1234@gmail.com</a>
-          <a class="download-cv-btn" href="cv/Magane%20P%20Letsoalo's%20CV.pdf" download>
-            Download CV
+        <h2 class="section-title reveal">Credentials and research</h2>
+        <div class="bento">
+          <article class="bento-cell cell-research reveal">
+            <div class="cell-icon"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,56a32,32,0,1,0,32,32A32,32,0,0,0,128,56Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,128,104Zm0,32a32,32,0,1,0,32,32A32,32,0,0,0,128,136Zm0,48a16,16,0,1,1,16-16A16,16,0,0,1,128,184Zm88-40H200V80h16a8,8,0,0,0,0-16H200V40a16,16,0,0,0-16-16H72A16,16,0,0,0,56,40V64H40a8,8,0,0,0,0,16H56v64H40a8,8,0,0,0,0,16H56v56a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16V160h16a8,8,0,0,0,0-16Zm-32,72H72V40H184V216Z"/></svg></div>
+            <h3>Adaptive traffic signal control</h3>
+            <p>My dissertation: using IoT sensing and predictive analytics to cut peak-hour congestion at South African intersections. Design Science Research, evaluated in SUMO traffic simulation.</p>
+            <p class="cell-foot mono">DST481 dissertation · in progress</p>
+          </article>
+          <article class="bento-cell cell-cert reveal">
+            <div class="cell-icon"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,136a8,8,0,0,1-8,8H72a8,8,0,0,1,0-16h48A8,8,0,0,1,128,136Zm-8-40H72a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16Zm112,65.47V224A8,8,0,0,1,220,231l-24-13.74L172,231A8,8,0,0,1,160,224V200H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216a16,16,0,0,1,16,16V86.53a51.88,51.88,0,0,1,0,74.94ZM160,184V161.47A52,52,0,0,1,216,76V56H40V184Zm56-12a51.88,51.88,0,0,1-40,0v38.22l16-9.16a8,8,0,0,1,7.94,0l16,9.16Zm16-48a36,36,0,1,0-36,36A36,36,0,0,0,232,124Z"/></svg></div>
+            <h3>UiPath Automation Associate</h3>
+            <p>Certified July 2026.</p>
+          </article>
+          <article class="bento-cell cell-next reveal">
+            <div class="cell-icon"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M245.66,74.34l-32-32a8,8,0,0,0-11.32,11.32L220.69,72H208c-49.33,0-61.05,28.12-71.38,52.92-9.38,22.51-16.92,40.59-49.48,42.84a40,40,0,1,0,.1,16c43.26-2.65,54.34-29.15,64.14-52.69C161.41,107,169.33,88,208,88h12.69l-18.35,18.34a8,8,0,0,0,11.32,11.32l32-32A8,8,0,0,0,245.66,74.34ZM48,200a24,24,0,1,1,24-24A24,24,0,0,1,48,200Z"/></svg></div>
+            <h3>Working towards</h3>
+            <p>UiPath Automation Developer Associate and UiPath agentic automation certifications.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+        <p class="section-lede reveal">Earlier software work from my degree and personal projects.</p>
+        <div class="project-list">
+          <a class="project-row reveal" href="https://github.com/KholdHart/jetspot-AI" target="_blank" rel="noopener">
+            <span class="project-name">Jetspot AI</span>
+            <span class="project-desc">AI chat web app with image upload.</span>
+            <span class="project-stack mono">React</span>
+            <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
           </a>
-          <div class="contact-socials">
-            <a class="social-icon" href="https://github.com/KholdHart" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
-                <path fill="currentColor" fill-rule="evenodd" d="M11 2.2c-4.85 0-8.8 3.95-8.8 8.8 0 3.89 2.52 7.19 6.02 8.36.44.08.6-.19.6-.43v-1.51c-2.45.53-2.96-1.18-2.96-1.18-.4-1.01-.98-1.28-.98-1.28-.8-.55.06-.54.06-.54.88.06 1.34.9 1.34.9.79 1.34 2.07.95 2.58.73.08-.57.31-.95.56-1.17-1.96-.22-4.03-.98-4.03-4.36 0-.96.34-1.75.89-2.37-.09-.22-.39-1.12.08-2.33 0 0 .74-.24 2.42.9.7-.19 1.45-.29 2.2-.29.75 0 1.5.1 2.2.29 1.68-1.14 2.42-.9 2.42-.9.47 1.21.17 2.11.08 2.33.55.62.89 1.41.89 2.37 0 3.39-2.07 4.13-4.04 4.35.32.28.6.83.6 1.67v2.48c0 .24.16.52.6.43C17.28 18.19 19.8 14.89 19.8 11c0-4.85-3.95-8.8-8.8-8.8Z" clip-rule="evenodd"/>
-              </svg>
-            </a>
-            <a class="social-icon" href="https://www.linkedin.com/in/magane-letsoalo-452444327/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg width="22" height="22" fill="none" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
-                <rect width="22" height="22" rx="5" fill="currentColor" fill-opacity="0.1"/>
-                <path fill="currentColor" d="M6.6 8.2h2.2v7.6H6.6V8.2Zm1.1-3.1a1.27 1.27 0 1 1 0 2.54 1.27 1.27 0 0 1 0-2.54ZM11 8.2h2.1v1.02c.29-.55 1.02-1.13 2.1-1.13 2.25 0 2.67 1.48 2.67 3.4v4.31h-2.2v-3.82c0-.91-.02-2.08-1.27-2.08-1.28 0-1.48 1-1.48 2.02v3.88H11V8.2Z"/>
-              </svg>
-            </a>
+          <a class="project-row reveal" href="https://github.com/KholdHart/Expense-Tracker" target="_blank" rel="noopener">
+            <span class="project-name">Expense Tracker</span>
+            <span class="project-desc">Budgeting and expense tracking with full CRUD.</span>
+            <span class="project-stack mono">ASP.NET MVC</span>
+            <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+          </a>
+          <a class="project-row reveal" href="https://github.com/KholdHart/BC-Wellness-System" target="_blank" rel="noopener">
+            <span class="project-name">BC Wellness System</span>
+            <span class="project-desc">Web and desktop system for student wellness at Belgium Campus.</span>
+            <span class="project-stack mono">Java</span>
+            <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+          </a>
+          <a class="project-row reveal" href="https://github.com/KholdHart/WPR381-Community-Portal" target="_blank" rel="noopener">
+            <span class="project-name">Community Portal</span>
+            <span class="project-desc">Community site for events and feedback.</span>
+            <span class="project-stack mono">Node.js · EJS</span>
+            <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+          </a>
+          <a class="project-row reveal" href="https://github.com/KholdHart/The-NEWS" target="_blank" rel="noopener">
+            <span class="project-name">The NEWS</span>
+            <span class="project-desc">News site fed by live APIs.</span>
+            <span class="project-stack mono">JavaScript</span>
+            <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+          </a>
+          <a class="project-row reveal" href="https://github.com/KholdHart/Ego-is-the-Enemy" target="_blank" rel="noopener">
+            <span class="project-name">Ego is the Enemy</span>
+            <span class="project-desc">A small site exploring the idea of ego.</span>
+            <span class="project-stack mono">HTML · CSS</span>
+            <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+          </a>
+        </div>
+        <a class="text-link reveal" href="https://github.com/KholdHart?tab=repositories" target="_blank" rel="noopener">All repositories on GitHub <svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a>
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section id="stack" class="stack">
+      <div class="container">
+        <h2 class="section-title reveal">Stack</h2>
+        <div class="stack-groups">
+          <div class="stack-group group-main reveal">
+            <h3>Automation and AI</h3>
+            <ul class="logo-row">
+              <li><svg class="icon" fill="currentColor" aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 7.882v8.235h8.235V7.882H0Zm.852.852h6.53v6.53H.852v-6.53Zm22.268.695c-.514 0-.886.345-.886.873 0 .511.36.878.886.878.518 0 .88-.359.88-.878 0-.521-.359-.873-.88-.873Zm-17.023.055a.501.501 0 0 0-.522.522c0 .302.22.509.522.509.302 0 .522-.206.522-.509a.501.501 0 0 0-.522-.522Zm17.023.102c.437 0 .716.278.716.716 0 .426-.274.712-.716.712-.426 0-.719-.271-.719-.712 0-.44.278-.716.719-.716Zm-.347.213v.988h.197v-.318h.14l.176.318h.22l-.186-.347a.32.32 0 0 0 .206-.311c0-.203-.159-.33-.374-.33h-.379Zm-3.74.002v4.468h.853v-1.774c0-.571.302-.914.804-.914s.763.33.763.838v1.85h.852v-1.946c0-.88-.619-1.45-1.409-1.45-.509 0-.818.192-1.01.515V9.801h-.853Zm3.937.157h.157c.115 0 .193.064.193.171 0 .118-.078.181-.193.181h-.157v-.352Zm-21.375.049v2.495c0 1.141.625 1.808 1.684 1.808 1.079 0 1.718-.681 1.718-1.808v-2.495h-.852v2.495c0 .646-.275 1.004-.846 1.004-.591 0-.852-.378-.852-1.004v-2.495h-.852Zm7.547 0v4.262h.852v-1.375h.77c.928 0 1.533-.543 1.533-1.457 0-.88-.591-1.43-1.533-1.43H9.142Zm7.809 0v.914h-.399v.722h.399v1.45c0 .791.35 1.176 1.161 1.176h.447v-.729h-.337c-.33 0-.419-.144-.419-.44v-1.457h.749v-.722h-.749v-.914h-.852Zm-6.957.687h.681c.488 0 .756.276.756.743 0 .502-.268.776-.756.776h-.681v-1.519Zm4.138.186c-.921 0-1.546.728-1.546 1.718 0 .997.639 1.712 1.546 1.712.537 0 .887-.193 1.086-.516v.475h.853v-3.348h-.853v.523c-.206-.344-.563-.564-1.086-.564Zm-8.461.041v3.348h.852v-3.348h-.852Zm8.661.701c.543 0 .886.399.886.976 0 .585-.364.963-.886.963-.578 0-.88-.406-.88-.963 0-.598.337-.976.88-.976Z"/></svg><span>UiPath Studio</span></li>
+              <li><svg class="icon" fill="currentColor" aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.758a1.001 1.001 0 0 0-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24 12.483V1.005A1.001 1.001 0 0 0 23.013 0Z"/></svg><span>Jira</span></li>
+              <li><svg class="icon" fill="currentColor" aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg><span>Claude API</span></li>
+              <li><svg class="icon" fill="currentColor" aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg><span>Python</span></li>
+            </ul>
+            <p class="stack-more">Maestro BPMN, Orchestrator and queues, REFramework, exception handling, prompt engineering.</p>
           </div>
+          <div class="stack-group reveal">
+            <h3>Languages</h3>
+            <p class="stack-words">C#, VB.NET, JavaScript, Java, Python, SQL</p>
+          </div>
+          <div class="stack-group reveal">
+            <h3>Web and tools</h3>
+            <p class="stack-words">ASP.NET Core MVC, Node.js, React, HTML and CSS, Git</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="education">
+      <div class="container edu-row reveal">
+        <div class="edu-icon"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V240a8,8,0,0,0,16,0V199.51a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L176,143.47v46.34C163.4,195.69,147.52,200,128,200Zm80-33.75a97.83,97.83,0,0,1-16,14.25V134.93l16-8.53ZM188,118.94l-.22-.13-56-29.87a8,8,0,0,0-7.52,14.12L171,128l-43,22.93L25,96,128,41.07,231,96Z"/></svg></div>
+        <div>
+          <h2 class="edu-degree">Bachelor of Computing, Software Engineering</h2>
+          <p class="edu-school">Belgium Campus iTversity</p>
+        </div>
+        <p class="edu-dates mono">2023 - Present</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="container reveal">
+        <h2 class="contact-title">Open to RPA developer and AI automation roles in Gauteng.</h2>
+        <p class="contact-sub">Email me to talk about a role or to request my CV.</p>
+        <a class="contact-email" href="mailto:phillipletsoalo1234@gmail.com">phillipletsoalo1234@gmail.com</a>
+        <div class="contact-socials">
+          <a href="https://github.com/KholdHart" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></svg> GitHub</a>
+          <a href="https://www.linkedin.com/in/magane-letsoalo-452444327/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg> LinkedIn</a>
         </div>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <span class="footer-content__main">&copy; 2025 Magane Letsoalo</span>
-        <span class="footer-content__luv">from kasi, with luv</span>
-      </div>
+    <div class="container footer-row">
+      <span>&copy; <span id="year">2026</span> Magane Letsoalo</span>
+      <span>from kasi, with luv</span>
     </div>
   </footer>
+
   <script src="main.js"></script>
+  <script src="universe.js"></script>
 </body>
 </html>
